@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 07/12/2010 11:42:37 by Hibernate Tools 3.3.0.GA -->
+<hibernate-mapping package="com.ar.vgmsistemas.dto">
+    <class name="Cliente" table="comercio" >
+        <composite-id class="PkCliente" name="id">
+        	<key-property name="idSucursal" column="id_sucursal"></key-property>
+        	<key-property name="idCliente" column="id_cliente"></key-property>
+        	<key-property name="idComercio" column="id_comercio"></key-property>
+        </composite-id>
+        <property name="cuit" type="string" column="id_cuit" />
+        <property name="domicilio" type="string" column="de_direccion" />
+        <property name="telefono" type="string" column="nu_telefono" />
+        <property name="razonSocial" type="string" column="de_organizacion" />
+        <property name="latitud" type="double" column="nu_latitud" />
+        <property name="longitud" type="double" column="nu_longitud" />
+        <many-to-one name="localidad" class="Localidad" column="id_postal"></many-to-one>
+        <many-to-one name="condicionRenta" class="CondicionRenta" column="ti_tadgr"></many-to-one>
+        <many-to-one name="categoriaFiscal" class="CategoriaFiscal" column="ti_contribuyente"></many-to-one>
+        <many-to-one name="condicionVenta" class="CondicionVenta" column="id_condvta"></many-to-one>
+        <many-to-one name="repartidor" class="Repartidor" column="id_repartidor"></many-to-one>
+        <many-to-one name="listaPrecio" class="ListaPrecio" column="id_lista"></many-to-one>
+        <many-to-one name="condicionDirsc" class="CondicionDirsc" column="ti_dirsc"></many-to-one>
+        <property name="limiteCredito" column="pr_limitecredito" type="float"></property>
+        <property name="limiteDisponibilidad" column="pr_limitedisponibilidad" type="string"></property>
+        <property name="descripcionRubro" column="de_rubro" type="string"></property>
+        <property name="tasaDescuentoCliente" column="ta_dto_clie" type="float"></property>
+        <property name="totalVentaAcumulada" column="pr_venta_acum" type="float"></property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 12-jun-2019 17:06:27 by Hibernate Tools 4.3.1.Final -->
+<hibernate-mapping auto-import="true">
+    <class name="com.ar.vgmsistemas.dto.Valores" table="valores" schema="dbo" catalog="JotaBePdas" optimistic-lock="version">
+        <id name="idValor" type="int">
+            <column name="id_valor" />
+            <generator class="assigned" />
+        </id>
+        <property name="idTipovalor" type="int">
+            <column name="id_tipovalor" not-null="true" />
+        </property>
+        <property name="deValor" type="string">
+            <column name="de_valor" length="30" />
+        </property>
+        <property name="idPlancta" type="string">
+            <column name="id_plancta" length="20" />
+        </property>
+        <property name="taCotizacion" type="big_decimal">
+            <column name="ta_cotizacion" precision="7" scale="5" />
+        </property>
+        <property name="snMonedaCorriente" type="java.lang.Character">
+            <column name="sn_moneda_corriente" length="1" />
+        </property>
+    </class>
+</hibernate-mapping>

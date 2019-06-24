@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.ar.vgmsistemas.dto">
+	<class name="Cheque" table="cheques">
+		<composite-id name="id" class="PkCheque" access="field">
+			<key-property column="id_bancogirado_cheque" name="idBanco" type="integer" />
+			<key-property column="id_cheque" name="numeroCheque" type="long" />
+			<key-property column="id_postal" name="idPostal" type="integer" />
+			<key-property column="id_sucbanco" name="sucursal" type="integer" />
+			<key-property column="id_nrocuenta" name="nroCuenta" type="long" />
+		</composite-id>
+		<property name="cuit" type="string" column="id_cuit" />
+		<!-- <property name="sucursal" column="id_sucbanco" type="integer"></property>  -->
+		<property name="importe" column="pr_monto" type="float"></property>
+		<!-- property name="fechaCheque" column="fe_cheque" type="date"></property> -->
+		<property name="fechaChequeSqlite" column="fe_cheque" type="string"></property>
+		<!-- <many-to-one name="banco" column="id_bancogirado" class="Banco" insert="false" update="false"></many-to-one>-->
+		<!-- <many-to-one name="localidad" column="id_postal" class="Localidad" insert="false" update="false"></many-to-one>-->
+		<property name="idSucursal" column="id_sucursal" type="long" access="field"></property>
+		<property name="idCliente" column="id_cliente" type="long" access="field"></property>
+		<many-to-one name="entregaCobranza" column="id_entrega" class="EntregaCobranza"></many-to-one>
+	</class>
+	
+	<!-- <sql-query name="chequesRechazados" >
+	<return-scalar column="sum" type="float"/>
+		SELECT sum(chequesr.pr_monto-chequesr.pr_pago) as sum
+		FROM chequesr, empresas
+		WHERE
+		empresas.sn_activada = 'S' AND
+		(empresas.sn_clienteunico = 'S' OR
+		chequesr.id_sucentrega = :idSucursal) AND 
+		chequesr.id_cliente = :idCliente AND 
+		(chequesr.pr_monto > chequesr.pr_pago)
+	</sql-query>
+	
+	<sql-query name="chequesEnCartera">
+		<return-scalar column="sum" type="float"/>
+		SELECT sum(cheques.pr_monto) as sum
+		FROM cheques, empresas 
+		WHERE
+		empresas.sn_activada = 'S' AND
+		(empresas.sn_clienteunico = 'S' OR
+		cheques.id_sucentrega = :idSucursal) AND 
+		cheques.id_cliente = :idCliente AND 
+		cheques.fe_cheque > :fecha
+	</sql-query>
+	
+	<sql-query name="chequesHistoricosEnCartera">
+		<return-scalar column="sum" type="float"/>
+		SELECT sum(pr_monto) as sum
+		FROM h_cheques, empresas 
+		WHERE
+		empresas.sn_activada = 'S' AND
+		(empresas.sn_clienteunico = 'S' OR
+		id_sucentrega = :idSucursal) AND 
+		id_cliente = :idCliente AND 
+		fe_cheque > :fecha
+	</sql-query> -->
+</hibernate-mapping>

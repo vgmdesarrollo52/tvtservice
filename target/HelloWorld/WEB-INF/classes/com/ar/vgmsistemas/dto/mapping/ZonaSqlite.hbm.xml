@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 13-jun-2019 12:28:18 by Hibernate Tools 4.3.1.Final -->
+<hibernate-mapping>
+    <class name="com.ar.vgmsistemas.dto.Zona" table="zonas" schema="dbo" catalog="JotaBePdas" optimistic-lock="version">
+        <id name="idZona" type="string">
+            <column name="id_zona" length="5" />
+            <generator class="assigned" />
+        </id>
+        <property name="deZona" type="string">
+            <column name="de_zona" length="30" not-null="true" />
+        </property>
+        <property name="nuEnviocc" type="java.lang.Integer">
+            <column name="nu_enviocc" />
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+	<!-- Generated 07/12/2010 11:42:37 by Hibernate Tools 3.3.0.GA -->
+<hibernate-mapping package="com.ar.vgmsistemas.dto">
+	<class name="SecuenciaRuteo" table="vend_comercio_ruta">
+		<composite-id class="PkSecuenciaRuteo" name="id" unsaved-value="undefined">
+			<key-property name="idVendedor" column="id_vendedor"/>
+			<key-property name="idSucursal" column="id_sucursal"></key-property>
+        	<key-property name="idCliente" column="id_cliente"></key-property>
+        	<key-property name="idComercio" column="id_comercio"></key-property>
+        	<key-property name="dia" column="dia"></key-property>
+		</composite-id>
+		<property name="numeroOrden" type="int" column="orden"></property>
+		<many-to-one name="cliente" class="Cliente" insert="false" update="false" lazy="proxy">
+			<column name="id_sucursal"></column>
+			<column name="id_cliente"></column>
+			<column name="id_comercio"></column>
+		</many-to-one>
+	</class>
+</hibernate-mapping>

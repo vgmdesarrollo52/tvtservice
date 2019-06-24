@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 06/07/2011 09:49:12 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping package="com.ar.vgmsistemas.dto">
+    <class name="PlanCuenta" table="plancta">
+        <id name="id" type="int">
+            <column name="id_plancta" />
+            <generator class="assigned" />
+        </id>
+        <property name="descripcion" type="string">
+            <column name="de_plancta" />
+        </property>
+		<property name="categoria" type="int">
+			<column name="id_categoria2"></column>
+		</property>
+		<property name="snEgresoMovil" type="string">
+            <column name="sn_egreso_movil" />
+        </property>
+    </class>
+</hibernate-mapping>

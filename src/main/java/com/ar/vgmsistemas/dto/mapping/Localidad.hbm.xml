@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 07/12/2010 11:42:37 by Hibernate Tools 3.3.0.GA -->
+<hibernate-mapping package="com.ar.vgmsistemas.dto">
+    <class name="Localidad" table="localidades" where="exists (SELECT 1 FROM comercio c WHERE c.id_postal = id_postal)">
+        <id name="id" type="int" access="field">
+            <column name="id_postal" />
+            <generator class="assigned" />
+        </id>
+        <property name="descripcion" type="string" column="de_localidad" />
+        <property name="codigoPostal" type="integer" column="cd_postal"/>
+        <many-to-one name="provincia" class="Provincia" column="id_provincia" lazy="no-proxy"></many-to-one>
+    </class>
+</hibernate-mapping>

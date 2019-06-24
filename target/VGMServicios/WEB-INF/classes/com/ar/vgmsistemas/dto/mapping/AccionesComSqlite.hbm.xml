@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 29/06/2011 08:51:48 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping package="com.ar.vgmsistemas.dto">
+    <class name="AccionesCom" table="acciones_com" where="sn_con_codigos != 'S' and sn_con_codigos is not null AND getdate() BETWEEN fe_vigencia_ini AND fe_vigencia_fin">
+        <id name="idAccionesCom" column="id_acciones_com" type="int" access="field">
+            <generator class="assigned" />
+        </id> 
+		<property name="snConCodigos" type="string" column="sn_con_codigos"/>
+		<property name="tiOrigen" type="string" column="ti_origen"/>
+		<property name="idTipoAcciones" type="integer" column="id_tipo_acciones"/>
+    </class>
+</hibernate-mapping>

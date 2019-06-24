@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+	<!-- Generated 07/12/2010 11:42:37 by Hibernate Tools 3.3.0.GA -->
+<hibernate-mapping package="com.ar.vgmsistemas.dto">
+	<class name="ArticuloPromocion" table="promoxart">
+		<composite-id name="id" class="PkArticuloPromocion">
+			<key-property name="idPromocion" column="id_promo" type="integer"></key-property>
+			<key-property name="idArticulo" column="id_articulos" type="integer"></key-property>
+			<key-property name="idSecuencia" column="id_secuencia" type="integer"></key-property>
+		</composite-id>
+		<many-to-one name="articulo" class="Articulo" column="id_articulos" insert="false" update="false" lazy="no-proxy"></many-to-one>
+		<property name="precioUnitario" column="pr_unidad" type="float"></property>
+		<property name="unidades" column="ca_unidades" type="float"></property>
+	</class>
+	
+</hibernate-mapping>

@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+	<!-- Generated 07/12/2010 11:42:37 by Hibernate Tools 3.3.0.GA -->
+<hibernate-mapping package="com.ar.vgmsistemas.dto">
+	<class name="MotivoAutorizacion" table="motivos_autorizacion"  >
+		<id name="id" type="int" access="field">
+			<column name="id_motivo_autoriza" />
+			<generator class="assigned" />
+		</id>
+		<property name="motivo" type="string" column="de_motivo_autoriza" />
+		<property name="tiAutorizacion" type="string" column="ti_autorizacion" />
+	 </class>	
+	
+</hibernate-mapping>

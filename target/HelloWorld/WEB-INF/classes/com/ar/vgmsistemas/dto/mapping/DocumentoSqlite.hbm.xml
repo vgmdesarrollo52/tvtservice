@@ -1,0 +1,137 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 07/12/2010 11:42:37 by Hibernate Tools 3.3.0.GA -->
+<hibernate-mapping package="com.ar.vgmsistemas.dto">
+    <class name="Documento" table="documentos">
+        <composite-id class="PkDocumento" name="id">
+        	<key-property name="idDocumento" column="id_doc"></key-property>
+        	<key-property name="idLetra" column="id_letra"></key-property>
+        	<key-property name="puntoVenta" column="id_ptovta"></key-property>
+        </composite-id>
+        <property name="descripcion" type="string" column="de_documento" />
+        <property name="tipoBlancoNegro" type="string" column="ti_bn" />
+        <property name="ultimoNumeroDocumento" type="long" column="id_numero" />
+        <property name="isMovilVisible" column="sn_movil" type="string"></property>
+        <property name="tipoAplicaStock" column="ti_aplica_stock" type="integer"></property>
+        <property name="tipoDocumento" column="ti_documento" type="string"/>
+        <property name="categoriaPlanCuenta" column="id_categoria2" type="integer"></property>
+        <property name="funcionTipoDocumento" column="id_funcion" type="integer"/>
+        <property name="snEstadistica" column="sn_estadistica" type="string"/>
+        <property name="numeroLineas" column="nu_lineas" type="integer"></property>
+        <property name="isGenerar" column="sn_generar" type="string"></property>
+        <property name="snFacturaElectronica" column="sn_factura_electronica" type="string"></property>
+        <property name="tiAplicaFacturaElectronica" column="ti_aplica_factura_electronica" type="integer"></property>
+        <property name="tiAplicaIva" column="ti_aplica_iva" type="integer"></property>        
+        <property name="snImprimirImpMovil" column="sn_imprimir_imp_movil" type="string"></property>        
+       	<property name="idDocAnulaFcNc" column="id_docanula_fcnc" type="string"></property>
+       	<property name="idDocAnulaTipoAB" column="id_docanula_tipoab" type="string"></property>
+       	<property name="idDocAnulaPtoVta" column="id_docanula_ptovta" type="integer"></property>
+       	<property name="snPedidoRentable" column="sn_pedido_rentable" type="string"/>
+        <property name="idDocGeneraFcNc" column="id_generar_fcnc" type="string"></property>
+       	<property name="idDocGeneraTipoAB" column="id_generar_tipoab" type="string"></property>
+       	<property name="idDocGeneraPtoVta" column="id_generar_ptovta" type="integer"></property>
+       	<property name="nuCopias" type="integer">
+            <column name="nu_copias" />
+        </property>
+        <property name="snVisualizar" type="string">
+            <column name="sn_visualizar" length="1" />
+        </property>
+        <property name="feDoc" type="timestamp">
+            <column name="fe_doc" length="23" />
+        </property>
+        <property name="dwFormulario" type="string">
+            <column name="dw_formulario" length="50" />
+        </property>
+        <property name="deImpresora" type="string">
+            <column name="de_impresora" length="50" />
+        </property>
+        <property name="snImpreAuto" type="string">
+            <column name="sn_impre_auto" length="1" />
+        </property>
+        <property name="deRed" type="string">
+            <column name="de_red" length="60" />
+        </property>
+        <property name="tiAplicastock" type="integer">
+            <column name="ti_aplicastock" />
+        </property>
+        <property name="snCopias" type="string">
+            <column name="sn_copias" length="1" />
+        </property>
+        <property name="snNumeraActual" type="string">
+            <column name="sn_numera_actual" length="1" />
+        </property>
+        <property name="idNumeraFcnc" type="string">
+            <column name="id_numera_fcnc" length="2" />
+        </property>
+        <property name="tiAplicaCc" type="integer">
+            <column name="ti_aplica_cc" />
+        </property>
+        <property name="idNumeraPtovta" type="integer">
+            <column name="id_numera_ptovta" />
+        </property>
+        <property name="tiAplicaCaja" type="integer">
+            <column name="ti_aplica_caja" />
+        </property>
+        <property name="snDetallaCaja" type="string">
+            <column name="sn_detalla_caja" length="1" />
+        </property>
+        <property name="idTipovalorCaja" type="integer">
+            <column name="id_tipovalor_caja" />
+        </property>
+        <property name="snAutomaticaCaja" type="string">
+            <column name="sn_automatica_caja" length="1" />
+        </property>
+        <property name="idValorCaja" type="integer">
+            <column name="id_valor_caja" />
+        </property>
+        <property name="tiFiscalDefault" type="string">
+            <column name="ti_fiscal_default" length="18" />
+        </property>
+        <property name="snUltimoCompCli" type="string">
+            <column name="sn_ultimo_comp_cli" length="1" />
+        </property>
+        <property name="tiBorraEn" type="integer">
+            <column name="ti_borra_en" />
+        </property>
+        <property name="snControlPedido" type="string">
+            <column name="sn_control_pedido" length="1" />
+        </property>
+        <property name="snDocAsientoContable" type="string">
+            <column name="sn_doc_asiento_contable" length="1" />
+        </property>
+        <property name="tiAplicaCompAnticipo" type="integer">
+            <column name="ti_aplica_comp_anticipo" />
+        </property>
+        <property name="snCompAnticipo" type="string">
+            <column name="sn_comp_anticipo" length="1" />
+        </property>
+        <property name="snEstados" type="string">
+            <column name="sn_estados" length="20" />
+        </property>
+        <property name="idFcncAfip" type="string">
+            <column name="id_fcnc_afip" length="3" />
+        </property>
+        <property name="snAutoimpresion" type="string">
+            <column name="sn_autoimpresion" length="1" />
+        </property>
+        <property name="snAplicaDetalle" type="string">
+            <column name="sn_aplica_detalle" length="1" />
+        </property>
+        <property name="snHojadep" type="string">
+            <column name="sn_hojadep" length="1" />
+        </property>
+        <property name="snTransferir" type="string">
+            <column name="sn_transferir" length="1" />
+        </property>
+        <property name="snMovdep" type="string">
+            <column name="sn_movdep" length="1" />
+        </property>
+        <property name="snIngresoMercaderia" type="string">
+            <column name="sn_ingreso_mercaderia" length="1" />
+        </property>
+        <property name="snPedidoWeb" type="string">
+            <column name="sn_pedido_web" length="1" />
+        </property>
+    </class>
+</hibernate-mapping>

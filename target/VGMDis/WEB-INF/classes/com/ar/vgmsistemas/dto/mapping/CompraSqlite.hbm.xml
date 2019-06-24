@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 07/12/2010 11:42:37 by Hibernate Tools 3.3.0.GA -->
+<hibernate-mapping package="com.ar.vgmsistemas.dto">
+    <class name="Compra" table="compra" >
+        <composite-id class="PkCompra" name="id">
+        	<key-property name="idProveedor" column="id_proveedor"></key-property>
+        	<key-property name="idFcncnd" column="id_fcncnd"></key-property>
+        	<key-property name="idPuntoVenta" column="id_ptovta"></key-property>
+        	<key-property name="idNumero" column="id_numero"></key-property>
+        </composite-id>
+        <property name="prSubtotal" type="float" column="pr_subtotal" />
+        <property name="taDto" type="float" column="ta_dto" />
+        <property name="prDto" type="float" column="pr_dto" />
+        <property name="prGravado" type="float" column="pr_gravado" />
+        <property name="prExento" type="float" column="pr_exento" />
+        <property name="prPercIngrBruto" type="float" column="pr_perc_ingr_bruto" />
+        <property name="prPercIva" column="pr_perc_iva" type="float"></property>
+        <property name="prIpInterno" column="pr_ipinterno" type="float"></property>
+        <property name="prIva" column="pr_iva" type="float"></property>
+        <property name="prCompra" column="pr_compra" type="float"></property>
+        <property name="feFacturaSqlite" column="fe_factura" type="string"></property>
+        <property name="feIngresoSqlite" column="fe_ingreso" type="string"></property>
+        <property name="feIvaSqlite" column="fe_iva" type="string"></property>
+        <property name="idMovil" column="id_movil" type="string"></property>
+        <property name="idHoja" column="id_hoja" type="long"></property>
+        <property name="idSucProv" column="id_sucprov" type="integer"></property>
+        <property name="idSucursal" column="id_sucursal_hoja" type="integer"></property>
+        <property name="deConcepto" column="de_concepto" type="string"></property>
+        <property name="idPlancta" column="id_plancta" type="integer"></property>
+        <property name="nuCuit" column="nu_cuit" type="string"></property>
+        <property name="idLetra" column="id_tipoab" type="string"></property>
+    </class>
+</hibernate-mapping>

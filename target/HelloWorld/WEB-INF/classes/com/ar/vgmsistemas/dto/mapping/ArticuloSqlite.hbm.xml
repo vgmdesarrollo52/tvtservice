@@ -1,0 +1,81 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+	<!-- Generated 07/12/2010 11:42:37 by Hibernate Tools 3.3.0.GA -->
+<hibernate-mapping package="com.ar.vgmsistemas.dto">
+	<class name="Articulo" table="articulos" >
+		<id name="id" type="long" access="field">
+			<column name="id_articulos" />
+			<generator class="assigned" />
+		</id>
+		<property name="descripcion" type="string" column="de_articulos" />
+		<property name="descripcionLarga" type="string" column="de_extra" />
+		<property name="idProveedor" type="long" column="id_proveedor" />
+		<many-to-one name="subrubro" class="Subrubro">
+			<column name="id_subrubro" not-null="true"></column>
+			<column name="id_segmento" not-null="true"></column>
+			<column name="id_negocio" not-null="true"></column>
+		</many-to-one>
+		<many-to-one name="marca" class="Marca" column="id_linea"></many-to-one>
+		<property name="idUbic1" type="long" column="id_ubic1" />
+		<property name="idUbic2" type="long" column="id_ubic2" />
+		<property name="deUnidad" type="string" column="de_unidad" />
+		<property name="unidadPorBulto" type="int" column="ca_unidxbulto" />
+		<property name="kilos" type="float" column="ca_kilos"/>
+		<property name="prCosto" column="pr_costo" type="float"></property>
+		<property name="precioBase" column="pr_arcor_a" type="float"></property>
+		<property name="snArcor" column="sn_arcor" type="string"></property>
+		<property name="prArcorB" column="pr_arcor_b" type="float"></property>
+		<property name="prArcorC" column="pr_arcor_c" type="float"></property>
+		<property name="taVari1" column="ta_vari1" type="float"></property>
+		<property name="taVari2" column="ta_vari2" type="float"></property>
+		<property name="taVari3" column="ta_vari3" type="float"></property>
+		<property name="taVari4" column="ta_vari4" type="float"></property>
+		<property name="taVari5" column="ta_vari5" type="float"></property>
+		<property name="snPesable" column="sn_pesable" type="string"></property>
+		<property name="taVari6" column="ta_vari6" type="float"></property>
+		<property name="taVari7" column="ta_vari7" type="float"></property>	
+		<property name="taVari8" column="ta_vari8" type="float"></property>
+		<property name="idCodigobarras" type="string" column="id_codigobarras" />
+		<property name="codigoEmpresa" type="string" column="id_empresa" />
+		<property name="snActivo" type="string" column="sn_activo" />
+		<property name="snEstadistica" type="string" column="sn_estadistica"/>
+		<!--  property name="feIngreso" type="date" column="fe_ingreso"/-->
+		<!--  property name="feActPrecioVta" type="date" column="fe_act_preciovta"/-->
+		<property name="precioCostoNeto" column="pr_costo_neto" type="float"></property>
+		<property name="taVari9" column="ta_vari9" type="float"></property>
+		<property name="taVari10" column="ta_vari10" type="float"></property>
+		<property name="taVari11" column="ta_vari11" type="float"></property>
+		<property name="idCodigobarrasBulto" type="string" column="id_codigobarras_bulto" />
+		<property name="snStock" type="string" column="sn_stock" />
+		<property name="snStockNeg" type="string" column="sn_stock_neg" />
+		<!--  property name="feActCosto" type="date" column="fe_act_costo"/-->
+		<property name="impuestoInterno" type="float" column="pr_imp_interno" />
+		<property name="idArtProveedor" type="string" column="id_art_proveedor" />
+		<property name="idUnidMed" type="long" column="id_unidmed" />
+		<property name="taComision" column="ta_comision" type="float"></property>
+		<property name="caUnidxBultoProv" type="long" column="ca_unidxbulto_prov" />
+		<property name="taVari12" column="ta_vari12" type="float"></property>
+		<property name="taVari13" column="ta_vari13" type="float"></property>
+		<property name="taVari14" column="ta_vari14" type="float"></property>
+		<property name="idListaProv" type="long" column="id_lista_prov" />
+		<property name="snPromocion" column="sn_promocion" type="string"></property>
+		<property name="snMovil" column="sn_movil" type="string"></property>
+		<property name="snCritico" column="sn_critico" type="string"></property>
+		<property name="caLitros" type="float" column="ca_litros" />
+		<property name="snEnviarProveed" column="sn_enviar_proveed" type="string"></property>
+		<property name="caBultosxPallet" type="long" column="ca_bultosxpallet" />
+		<property name="caVolumen" type="long" column="ca_volumen" />
+		<property name="taCosto" column="ta_costo" type="float"></property>
+		<property name="isGenerico" column="sn_generico" type="string"></property>
+		<!--  property name="fePublicacion" type="date" column="fe_publicacion_web"/-->
+		<property name="idCodigobarraPalet" type="string" column="id_codigobarra_palet" />	
+		<property name="stock" type="float" column="ca_stock" access="field"/>
+		<property name="tasaIva" type="float" column="ta_iva" />
+		<property name="tasaImpuestoInterno" type="float" column="ta_imp_interno" />
+		<property name="snUnidad" column="sn_unidad" type="string"></property>
+		
+		
+	</class>
+	
+</hibernate-mapping>

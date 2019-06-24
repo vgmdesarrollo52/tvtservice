@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+	<!-- Generated 07/12/2010 11:42:37 by Hibernate Tools 3.3.0.GA -->
+<hibernate-mapping package="com.ar.vgmsistemas.dto">
+	<class name="VendedorObjetivo" table="vend_objetivos">
+		<id name="idObjetivo" column="id_objetivo" type="int">
+			<generator class="assigned" />
+		</id>
+		<many-to-one class="Vendedor" column="id_vendedor" lazy="false" name="vendedor"></many-to-one>
+		<property name="tiObjetivo" type="string" column="ti_objetivo" />		
+		<property name="feDesdeSqlite" type="string" column="fe_desde" />		
+		<property name="feHastaSqlite" type="string" column="fe_hasta" />
+		<property name="snAplica" type="string" column="sn_aplica" />		
+		<property name="tiCategoria" type="int" column="ti_categoria" />
+		<property name="idProveedor" type="long" column="id_proveedor"/>
+		
+	</class>	
+</hibernate-mapping>

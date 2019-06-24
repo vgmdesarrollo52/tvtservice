@@ -1,0 +1,232 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 24-jun-2019 12:24:44 by Hibernate Tools 4.3.1.Final -->
+<hibernate-mapping>
+    <class name="com.ar.vgmsistemas.dto.Documentos" table="Documentos" schema="dbo" catalog="JotaBePdas" optimistic-lock="version">
+        <composite-id name="id" class="com.ar.vgmsistemas.dto.DocumentosId">
+            <key-property name="idDoc" type="string">
+                <column name="id_doc" length="2" />
+            </key-property>
+            <key-property name="idLetra" type="char">
+                <column name="id_letra" length="1" />
+            </key-property>
+            <key-property name="idPtovta" type="int">
+                <column name="id_ptovta" />
+            </key-property>
+        </composite-id>
+        <property name="idNumero" type="java.lang.Integer">
+            <column name="id_numero" />
+        </property>
+        <property name="deDocumento" type="string">
+            <column name="de_documento" length="25" />
+        </property>
+        <property name="nuCopias" type="java.lang.Integer">
+            <column name="nu_copias" />
+        </property>
+        <property name="snVisualizar" type="java.lang.Character">
+            <column name="sn_visualizar" length="1" />
+        </property>
+        <property name="feDoc" type="timestamp">
+            <column name="fe_doc" length="23" />
+        </property>
+        <property name="nuLineas" type="java.lang.Integer">
+            <column name="nu_lineas" />
+        </property>
+        <property name="idN1" type="java.lang.Integer">
+            <column name="id_n1" />
+        </property>
+        <property name="dwFormulario" type="string">
+            <column name="dw_formulario" length="50" />
+        </property>
+        <property name="deImpresora" type="string">
+            <column name="de_impresora" length="50" />
+        </property>
+        <property name="snImpreAuto" type="java.lang.Character">
+            <column name="sn_impre_auto" length="1" />
+        </property>
+        <property name="deRed" type="string">
+            <column name="de_red" length="60" />
+        </property>
+        <property name="tiAplicastock" type="java.lang.Integer">
+            <column name="ti_aplicastock" />
+        </property>
+        <property name="snCopias" type="java.lang.Character">
+            <column name="sn_copias" length="1" />
+        </property>
+        <property name="tiAplicaStock" type="java.lang.Integer">
+            <column name="ti_aplica_stock" />
+        </property>
+        <property name="snNumeraActual" type="java.lang.Character">
+            <column name="sn_numera_actual" length="1" />
+        </property>
+        <property name="idNumeraFcnc" type="string">
+            <column name="id_numera_fcnc" length="2" />
+        </property>
+        <property name="idNumeraTipoab" type="java.lang.Character">
+            <column name="id_numera_tipoab" length="1" />
+        </property>
+        <property name="tiAplicaCc" type="java.lang.Integer">
+            <column name="ti_aplica_cc" />
+        </property>
+        <property name="idNumeraPtovta" type="java.lang.Integer">
+            <column name="id_numera_ptovta" />
+        </property>
+        <property name="tiAplicaIva" type="java.lang.Integer">
+            <column name="ti_aplica_iva" />
+        </property>
+        <property name="tiAplicaCaja" type="java.lang.Integer">
+            <column name="ti_aplica_caja" />
+        </property>
+        <property name="snDetallaCaja" type="java.lang.Character">
+            <column name="sn_detalla_caja" length="1" />
+        </property>
+        <property name="idTipovalorCaja" type="java.lang.Integer">
+            <column name="id_tipovalor_caja" />
+        </property>
+        <property name="snAutomaticaCaja" type="java.lang.Character">
+            <column name="sn_automatica_caja" length="1" />
+        </property>
+        <property name="idValorCaja" type="java.lang.Integer">
+            <column name="id_valor_caja" />
+        </property>
+        <property name="snNumeraAut" type="java.lang.Character">
+            <column name="sn_numera_aut" length="1" />
+        </property>
+        <property name="tiAplicaInfo" type="java.lang.Integer">
+            <column name="ti_aplica_info" />
+        </property>
+        <property name="snAplicaImportes" type="java.lang.Character">
+            <column name="sn_aplica_importes" length="1" />
+        </property>
+        <property name="tiDocumento" type="java.lang.Character">
+            <column name="ti_documento" length="1" />
+        </property>
+        <property name="idImpresion" type="java.lang.Integer">
+            <column name="id_impresion" />
+        </property>
+        <property name="tiFiscalDefault" type="string">
+            <column name="ti_fiscal_default" length="18" />
+        </property>
+        <property name="prLimiteventa" type="big_decimal">
+            <column name="pr_limiteventa" precision="12" />
+        </property>
+        <property name="snEstadistica" type="java.lang.Character">
+            <column name="sn_estadistica" length="1" />
+        </property>
+        <property name="snGenerar" type="java.lang.Character">
+            <column name="sn_generar" length="1" />
+        </property>
+        <property name="snUltimoCompCli" type="java.lang.Character">
+            <column name="sn_ultimo_comp_cli" length="1" />
+        </property>
+        <property name="snReparto" type="java.lang.Character">
+            <column name="sn_reparto" length="1" />
+        </property>
+        <property name="idDocanulaFcnc" type="string">
+            <column name="id_docanula_fcnc" length="2" />
+        </property>
+        <property name="idDocanulaTipoab" type="java.lang.Character">
+            <column name="id_docanula_tipoab" length="1" />
+        </property>
+        <property name="idDocanulaPtovta" type="java.lang.Integer">
+            <column name="id_docanula_ptovta" />
+        </property>
+        <property name="tiBorraEn" type="java.lang.Integer">
+            <column name="ti_borra_en" />
+        </property>
+        <property name="snControlPedido" type="java.lang.Character">
+            <column name="sn_control_pedido" length="1" />
+        </property>
+        <property name="snDocAsientoContable" type="string">
+            <column name="sn_doc_asiento_contable" length="1" />
+        </property>
+        <property name="tiAplicaCompAnticipo" type="java.lang.Integer">
+            <column name="ti_aplica_comp_anticipo" />
+        </property>
+        <property name="snCompAnticipo" type="string">
+            <column name="sn_comp_anticipo" length="1" />
+        </property>
+        <property name="snEstados" type="string">
+            <column name="sn_estados" length="20" />
+        </property>
+        <property name="idFcncAfip" type="string">
+            <column name="id_fcnc_afip" length="3" />
+        </property>
+        <property name="snAutoimpresion" type="string">
+            <column name="sn_autoimpresion" length="1" />
+        </property>
+        <property name="idGenerarFcnc" type="string">
+            <column name="id_generar_fcnc" length="2" />
+        </property>
+        <property name="idGenerarTipoab" type="string">
+            <column name="id_generar_tipoab" length="1" />
+        </property>
+        <property name="idGenerarPtovta" type="java.lang.Integer">
+            <column name="id_generar_ptovta" />
+        </property>
+        <property name="snAplicaDetalle" type="string">
+            <column name="sn_aplica_detalle" length="1" />
+        </property>
+        <property name="tiBn" type="java.lang.Character">
+            <column name="ti_bn" length="1" />
+        </property>
+        <property name="snMovil" type="java.lang.Character">
+            <column name="sn_movil" length="1" />
+        </property>
+        <property name="idQuiebreFcnc" type="string">
+            <column name="id_quiebre_fcnc" length="2" />
+        </property>
+        <property name="idQuiebreTipoab" type="string">
+            <column name="id_quiebre_tipoab" length="1" />
+        </property>
+        <property name="idQuiebrePtovta" type="java.lang.Integer">
+            <column name="id_quiebre_ptovta" />
+        </property>
+        <property name="snCompQuiebre" type="string">
+            <column name="sn_comp_quiebre" length="1" />
+        </property>
+        <property name="idCategoria2" type="java.lang.Integer">
+            <column name="id_categoria2" />
+        </property>
+        <property name="snPreventaWeb" type="java.lang.Character">
+            <column name="sn_preventa_web" length="1" />
+        </property>
+        <property name="tiDesdoble" type="java.lang.Integer">
+            <column name="ti_desdoble" />
+        </property>
+        <property name="snFacturaElectronica" type="string">
+            <column name="sn_factura_electronica" length="1" />
+        </property>
+        <property name="tiAplicaFacturaElectronica" type="java.lang.Integer">
+            <column name="ti_aplica_factura_electronica" />
+        </property>
+        <property name="snHojadep" type="string">
+            <column name="sn_hojadep" length="1" />
+        </property>
+        <property name="snTransferir" type="string">
+            <column name="sn_transferir" length="1" />
+        </property>
+        <property name="snMovdep" type="java.lang.Character">
+            <column name="sn_movdep" length="1" />
+        </property>
+        <property name="snIngresoMercaderia" type="string">
+            <column name="sn_ingreso_mercaderia" length="1" />
+        </property>
+        <property name="snPedidoWeb" type="string">
+            <column name="sn_pedido_web" length="1" not-null="true" />
+        </property>
+        <property name="snImprimirImpMovil" type="string">
+            <column name="sn_imprimir_imp_movil" length="1" />
+        </property>
+        <property name="tiAplicaStockCliente" type="java.lang.Integer">
+            <column name="ti_aplica_stock_cliente" />
+        </property>
+        <property name="tiPedidoRentable" type="string">
+            <column name="ti_pedido_rentable" length="1" />
+        </property>
+        <property name="snControlSubrubro" type="java.lang.Character">
+            <column name="sn_control_subrubro" length="1" />
+        </property>
+    </class>
+</hibernate-mapping>

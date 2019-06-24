@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.ar.vgmsistemas.dto">
+    <class name="RecursoHumano" table="rrhh" where="sn_activo='S'" abstract="false">
+        <id name="id" type="long" access="field">
+            <column name="id_legajo" />
+            <generator class="assigned" />
+        </id>
+        <property name="idCategoria" type="integer" column="id_categoria" />
+        <property name="nombre" type="string" column="de_nombres" />
+        <property name="apellido" type="string" column="de_apellido" />
+        <property name="domicilio" type="string" column="de_domicilio" />
+        <property name="numeroDocumento" type="string" column="nu_documento" />
+        <property name="password" type="string" column="de_password" />
+        <property name="isActivo" type="string" column="sn_activo"/>
+        <property name="horaEntradaMananaSqlite" type="string" column="fe_tp_dma" />
+        <property name="horaSalidaMananaSqlite" type="string" column="fe_tp_hma" />
+        <property name="horaEntradaTardeSqlite" type="string" column="fe_tp_dta" />
+        <property name="horaSalidaTardeSqlite" type="string" column="fe_tp_hta" />
+
+    </class>
+    
+    <!-- <sql-query name="recoverySucursal">
+		SELECT id_sucursal AS idSucursal 
+		FROM rrhh 
+		WHERE id_legajo =:idLegajo
+		<return-scalar column="idSucursal" type="long" />
+	</sql-query>
+	
+	<sql-query name="insertRepartidor">
+		INSERT INTO repartidor(id_repartidor, sn_movil)
+		VALUES(:idRepartidor, :snMovil);
+	</sql-query> -->
+</hibernate-mapping>

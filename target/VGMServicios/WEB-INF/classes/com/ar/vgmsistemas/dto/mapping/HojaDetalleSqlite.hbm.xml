@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+	<!-- Generated 07/12/2010 11:42:37 by Hibernate Tools 3.3.0.GA -->
+<hibernate-mapping package="com.ar.vgmsistemas.dto">
+	<class name="com.ar.vgmsistemas.dto.HojaDetalle" table="hoja_detalle" where="">
+		<composite-id class="PkHojaDetalle" name="id" unsaved-value="undefined">
+			<key-property name="idHoja" column="id_hoja" type="long"/>
+			<key-property name="idSucursal" column="id_sucursal" type="long"/>
+			<key-property name="idFcnc" column="id_fcnc" type="string"/>			
+			<key-property name="idTipoab" column="id_tipoab" type="string"/>
+			<key-property name="idPtovta" column="id_ptovta" type="long"/>
+			<key-property name="idNumdoc" column="id_numdoc" type="long"/>
+		</composite-id>
+		<property name="fechaVentaSqlite" type="string" column="fe_venta" />		
+		<many-to-one name="vendedor" class="Vendedor" column="id_vendedor"/>
+		<property name="prTotal" type="float" column="pr_total" />	
+		<property name="prNotaCredito" type="float" column="pr_nc" />	
+		<property name="prPagado" type="float" column="pr_pagado" />	
+		<property name="idMovil" type="string" column="id_movil"/>
+		<many-to-one class="CondicionVenta" column="id_condvta" lazy="no-proxy" name="condicionVenta"/>
+		<property name="tiEstado" type="string" column="ti_estado"></property>
+		<many-to-one class="Cliente" name="cliente" lazy="false">
+		    <column name="id_succliente"/>
+		    <column name="id_cliente"/>
+		    <column name="id_comercio"/>
+  		</many-to-one>	 	
+  		<many-to-one name="entregaCobranza" column="id_entrega_detalle" class="EntregaCobranza" insert="true" update="true" lazy="false"></many-to-one>
+	</class>
+</hibernate-mapping>

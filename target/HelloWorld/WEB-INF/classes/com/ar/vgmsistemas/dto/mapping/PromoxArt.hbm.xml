@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+	<!-- Generated 07/12/2010 11:42:37 by Hibernate Tools 3.3.0.GA -->
+<hibernate-mapping package="com.ar.vgmsistemas.dto">
+	<class name="PromoxArt" table="promoxart">
+		<composite-id class="PkPromoxArt" name="id" unsaved-value="undefined">
+			<key-property name="idPromo" column="id_promo"/>
+			<key-property name="idArticulos" column="id_articulos"/>
+			<key-property name="idSecuencia" column="id_secuencia"/>
+		</composite-id>
+		<property name="caUnidades" type="float" column="ca_unidades" />
+		<property name="prUnidad" type="float" column="pr_unidad"></property>
+	</class>	
+</hibernate-mapping>

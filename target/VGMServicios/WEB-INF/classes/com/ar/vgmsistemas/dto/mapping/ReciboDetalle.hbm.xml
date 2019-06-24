@@ -1,0 +1,62 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.ar.vgmsistemas.dto">
+	<class name="ReciboDetalle" table="pagos">
+		<id name="id" column="id" type="integer">
+			<!-- <generator class="identity"></generator> -->
+		</id>
+		<many-to-one name="cuentaCorriente" class="CuentaCorriente">
+			<column name="id_fcnc"/>
+			<column name="id_tipoab"/>
+			<column name="id_ptovta"/>
+			<column name="id_numdoc"/>
+			<column name="nu_cuota"/>			
+		</many-to-one>
+		<property name="idPago" column="id_pago" type="integer"></property>
+		<property name="importePagado" column="pr_pago" type="float"></property>
+		<property name="importeNotaCredito" column="pr_nc" type="float"></property>
+		<property name="totalPagado" column="pr_pagado" type="float"></property>
+		<property name="saldo" column="pr_saldo" type="float"></property>
+		<property name="saldoMovil" column="pr_saldomovil" type="float"></property>
+		<property name="taDtoRecibo" column="ta_dto_recibo" type="float"></property>
+		<many-to-one name="recibo" class="Recibo">
+			<column name="id_recibo"/>
+			<column name="id_recpvta"/>
+		</many-to-one>
+		<many-to-one name="recursoHumano" column="id_legajo" class="RecursoHumano"></many-to-one>
+	</class>
+	<!-- <sql-query name="recoveryNextIdPago">
+		SELECT max(id_pago) + 1 as idNumero
+		FROM pagos  
+		WHERE pagos.id_fcnc = :idDocumento AND  
+			  pagos.id_tipoab = :idLetra AND  
+			  pagos.id_ptovta = :puntoVenta AND  
+			  pagos.id_numdoc = :numeroDocumento
+		<return-scalar column="idNumero" type="integer" />
+	</sql-query>
+	<query name="recoveryRepetido">
+	    select recd from ReciboDetalle as recd where
+	    recd.recibo.id.idRecibo = :idRecibo and
+	    recd.recibo.id.idPuntoVenta = :idPuntoVenta and
+	    recd.cuentaCorriente.id.idDocumento= :idFcnc and
+	    recd.cuentaCorriente.id.idLetra= :idLetra and
+	    recd.cuentaCorriente.id.puntoVenta= :idPtoVta and
+	    recd.cuentaCorriente.id.idNumeroDocumento = :idNumdoc
+	</query>
+	
+	<sql-query name="existsRepetidoInH_Pagos">
+	    SELECT h_pagos.pr_pago
+	    FROM h_pagos
+	    WHERE 
+	    	  h_pagos.id_recibo = :idRecibo AND
+	    	  h_pagos.id_recpvta = :idPuntoVenta AND
+	          h_pagos.id_fcnc = :idFcnc AND  
+			  h_pagos.id_tipoab = :idLetra AND  
+			  h_pagos.id_ptovta = :idPtoVta AND  
+			  h_pagos.id_numdoc = :idNumdoc
+	    <return-scalar column="pr_pago" type="float" />
+	</sql-query>  -->
+	
+</hibernate-mapping>

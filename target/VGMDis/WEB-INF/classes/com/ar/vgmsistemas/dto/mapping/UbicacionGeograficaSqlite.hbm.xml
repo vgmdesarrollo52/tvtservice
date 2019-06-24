@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 07/12/2010 11:42:37 by Hibernate Tools 3.3.0.GA -->
+<hibernate-mapping package="com.ar.vgmsistemas.dto">
+	<class name="UbicacionGeografica" table="ubicacion_geografica">
+		<id name="id" type="int" access="field">
+			<column name="id" />
+			<generator class="identity" />
+		</id>
+	  <property column="id_legajo" generated="never" lazy="false" name="idLegajo" type="int"/>
+	  <property column="fe_posicion" generated="never" lazy="false" name="fechaPosicionSqlite" type="string"/>
+	  <property column="nu_latitud" generated="never" lazy="false" name="latitud" type="float"/>
+	  <property column="nu_longitud" generated="never" lazy="false" name="longitud" type="float"/>
+	  <property column="nu_precision" generated="never" lazy="false" name="precision" type="float"/>
+	  <property column="nu_velocidad" generated="never" lazy="false" name="velocidad" type="float"/>
+	  <property column="nu_altitud" generated="never" lazy="false" name="altitud" type="float"/>
+	  <property column="ti_operacion" generated="never" lazy="false" name="tipoOperacion" type="string"/>
+	  <property column="id_movil" generated="never" lazy="false" name="idMovil" type="string"/>
+	  <property column="device_id" generated="never" lazy="false" name="deviceId" type="string"/>
+	  <property column="proveedor_estado" generated="never" lazy="false" name="estadoProveedor" type="string"/>
+ 
+  </class>
+  
+</hibernate-mapping>

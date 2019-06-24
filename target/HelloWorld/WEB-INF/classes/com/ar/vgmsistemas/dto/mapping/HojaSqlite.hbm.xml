@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+	<!-- Generated 07/12/2010 11:42:37 by Hibernate Tools 3.3.0.GA -->
+<hibernate-mapping package="com.ar.vgmsistemas.dto">
+	<class name="com.ar.vgmsistemas.dto.Hoja" table="hoja">
+		<id name="idHoja" type="long" access="field">
+			<column name="id_hoja" />
+			<generator class="assigned" />
+		</id>
+		<property name="idSucursal" type="integer" column="id_sucursal" />
+		<property name="fechaHojaSqlite" type="string" column="fe_hoja" />
+		<property name="idDeposito" type="long" column="id_deposito" />
+		<property name="prContado" type="float" column="pr_contado" />
+		<property name="prFiado" type="float" column="pr_fiado" />
+		<property name="prPendiente" type="float" column="pr_pendiente" />
+		<property name="prAnulado" type="float" column="pr_anulado" />
+		<property name="prNc" type="float" column="pr_nc" />
+		<property name="prTotal" type="float" column="pr_total" />
+		<property name="isRendida" type="string" column="sn_rendida" />
+		<!-- property name="tiEstado" type="string" column="ti_estado"></property-->
+		<!-- bag name="hojaDetalle" table="hoja_detalle" lazy="false">
+   			<key>
+   			    <column name="id_hoja"/>
+   			</key>
+   			<one-to-many class="HojaDetalle"/>
+  		</bag> -->
+	</class>
+	
+</hibernate-mapping>

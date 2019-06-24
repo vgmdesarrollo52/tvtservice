@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.ar.vgmsistemas.dto">
+	<class name="CuentaCorriente" table="documentos_cuenta">
+		<composite-id name="id" class="PkCuentaCorriente" >
+			<key-property column="id_fcnc" name="idDocumento" type="string" />
+			<key-property column="id_tipoab" name="idLetra" type="string" />
+			<key-property column="id_ptovta" name="puntoVenta" type="long" />
+			<key-property column="id_numdoc" name="idNumeroDocumento" type="long" />
+			<key-property name="numeroCuota" column="nu_cuota"/>			
+		</composite-id>
+		<property name="totalCuota" column="pr_cuota" type="float"/>
+		<property name="totalPagado" column="pr_pagado" type="float"/>
+		<property name="totalNotaCredito" column="pr_nc" type="float"/>
+		<property name="signo" column="ti_aplica_cc" type="integer"/>						
+		<many-to-one name="venta" class="Venta" insert="false" update="false">
+			<column name="id_fcnc" />
+			<column name="id_tipoab"/>
+			<column name="id_ptovta"/>
+			<column name="id_numdoc"/>
+		</many-to-one>	
+		<many-to-one name="vendedor" column="id_vendedor" class="Vendedor" lazy="no-proxy"/>
+		<many-to-one class="Cliente" name="cliente">
+			<column name="id_succliente" />
+			<column name="id_cliente" />
+			<column name="id_comercio" />
+		</many-to-one>
+		<property name="fechaVentaSqlite" column="fe_venta" type="string"></property>
+		<many-to-one name="condicionVenta" column="id_condvta" class="CondicionVenta"></many-to-one>
+		<property name="saldo" column="pr_saldo" type="float"></property>
+		<property name="idMovil" column="id_movil" type="string"></property> 
+		<property name="idNumdocFiscal" column="id_numdoc_fiscal" type="long"></property> 
+	</class>
+</hibernate-mapping>

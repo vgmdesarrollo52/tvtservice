@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+	<!-- Generated 07/12/2010 11:42:37 by Hibernate Tools 3.3.0.GA -->
+<hibernate-mapping package="com.ar.vgmsistemas.dto">
+	<class name="SubrubroVendedor" table="vendedorxsubrubro">
+		<composite-id class="PkSubrubroVendedor" name="id" unsaved-value="undefined">
+			<key-property name="idVendedor" column="id_vendedor"/>
+			<key-property name="idSubrubro" column="id_subrubro"/>
+			<key-property name="idRubro" column="id_segmento"/>
+			<key-property name="idNegocio" column="id_negocio"/>
+		</composite-id>
+		<many-to-one name="subrubro" class="Subrubro" insert="false" update="false" lazy="proxy">
+			<column name="id_subrubro"></column>
+			<column name="id_segmento"></column>
+			<column name="id_negocio"></column>
+		</many-to-one>
+	</class>
+</hibernate-mapping>

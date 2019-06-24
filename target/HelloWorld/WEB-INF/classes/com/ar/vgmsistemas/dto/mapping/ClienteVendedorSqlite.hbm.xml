@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.ar.vgmsistemas.dto">
+	   <class name="ClienteVendedor" table="vend_comercio" >
+        <composite-id name="id" class="PkClienteVendedor" unsaved-value="undefined" >
+            <key-property name="idVendedor" column="id_vendedor" type="long" />
+            <key-property name="idSucursal" column="id_sucursal" type="long" />
+            <key-property name="idCliente" column="id_cliente" type="long" />
+            <key-property name="idComercio" column="id_comercio" type="long" />
+        </composite-id>
+        
+    </class>
+</hibernate-mapping>

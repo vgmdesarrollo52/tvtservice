@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 07/12/2010 11:42:37 by Hibernate Tools 3.3.0.GA -->
+
+<hibernate-mapping package="com.ar.vgmsistemas.dto" >
+    <class name="CodigoAutorizacionCobranza" table="codigos_autorizacion" >
+        <composite-id name="id" class="PkCodigoAutorizacion" unsaved-value="undefined" >
+            <key-property name="idDocumento" 		column="id_doc" type="string" />
+            <key-property name="idLetra" 			column="id_letra" type="string" />
+            <key-property name="puntoVenta" 		column="id_ptovta" type="long" />
+            <key-property name="idNumeroDocumento" 	column="id_numero" type="long" />
+        </composite-id>
+        <property name="codigo" column="codigo" type="string"></property> 
+    </class>
+</hibernate-mapping>

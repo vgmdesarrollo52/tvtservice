@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 07/12/2010 11:42:37 by Hibernate Tools 3.3.0.GA -->
+<hibernate-mapping package="com.ar.vgmsistemas.dto">
+    <class name="CondicionVenta" table="condvta">
+        <id name="id" type="string" access="field">
+            <column name="id_condvta" />
+            <generator class="assigned" />
+        </id>
+        <property name="descripcion" type="string" column="de_convta" />
+        <property name="diasAtraso" column="nu_diasatraso" type="integer"></property>
+        <property name="cuentaCorriente" type="string" column="sn_controlfiado" />
+        <property name="nuCuotas" column="nu_cuotas" type="integer"/>
+        <property name="nuHoja" column="nu_hoja" type="integer"/>
+        <property name="tasaDescuento" column="ta_var1" type="float"/>
+        <property name="taVar2" column="ta_var2" type="float"/>
+        <property name="taVar3" column="ta_var3" type="float"/>
+        <property name="idCondvtaProv" type="string" column="id_condvta_prov" />
+    </class>
+</hibernate-mapping>

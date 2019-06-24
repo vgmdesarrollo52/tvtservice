@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+	<!-- Generated 07/12/2010 11:42:37 by Hibernate Tools 3.3.0.GA -->
+<hibernate-mapping package="com.ar.vgmsistemas.dto">
+	<class name="CategoriasEmp" table="categoriasemp">
+		<id name="id" type="int" access="field">
+			<column name="id_categoria" />
+			<generator class="assigned" />
+		</id>
+		<property name="deCategoria" column="de_categoria" type="string"/>
+		
+	</class>
+</hibernate-mapping>

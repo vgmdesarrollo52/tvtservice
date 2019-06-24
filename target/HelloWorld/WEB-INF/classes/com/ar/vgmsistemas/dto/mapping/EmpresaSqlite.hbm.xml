@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.ar.vgmsistemas.dto">
+	<class name="com.ar.vgmsistemas.dto.Empresa" table="empresas">
+		<id name="id" type="long" access="field">
+			<column name="id_empresa" />
+			<generator class="assigned" />
+		</id>
+		<property name="nombreEmpresa" column="de_empresa"></property>
+		<property name="documentoAnticipo" column="id_fcnc_anticipo"></property>
+		<property name="letraAnticipo" column="id_letra_anticipo"></property>
+		<property name="numeroCuotaAnticipo" column="nu_cuota_anticipo"></property>
+		<property name="isCobranzaEstrica" column="sn_cobranza_estricta"></property>
+		<property name="documentoEgreso" column="id_fcnc_egreso"></property>
+		<property name="isDescuentoActivoMovil" column="sn_descuento"></property>
+		<property name="idlistaPorDefecto" column="id_lista_defecto"></property>
+		<property name="idPostalPorDefecto" column="id_postal_defecto"></property>
+		<property name="isRegistrarLocalizacion" column="sn_registrar_localizacion"></property>
+		<property name="montoMinimoFactura" column="pr_monto_min_factura"></property>
+		<property name="importeACubrirParaDescuento" column="pr_monto_min_dto_factura"></property>
+		<property name="tasaMaximaArticulosCriticos" column="ta_maxarticulocritico"></property>
+		<property name="segundosTolerancia" column="nu_tolerancia"></property>
+		<property name="tasaIvaNoCategorizado" column="ta_ivanoinscripto"></property>
+		<property name="isMultiEmpresa" column="sn_multiempresa"></property>
+		<property name="tipoEmpresa" column="ti_empresa"></property>
+		<property name="isManejoTurno" column="sn_turno"></property>
+		<property name="isControlLimiteDisponibilidad" column="sn_control_lim_disp" />
+		<property name="snReciboProvisorio" column="sn_recibo_provisorio" />
+		<property name="snMovilReciboDto" column="sn_movil_recibo_dto" />
+		<property name="snClienteUnico" column="sn_clienteunico" />
+		<property name="anticipoHabilitado" column="anticipo_habilitado" />
+		<property name="snSumaIvaReporteMovil" column="sn_sum_iva_rep_movil" />
+		<property name="categoriasEmpRepartidor" column="cat_emp_repartidor" />
+		<property name="snImprimirIdEmpresa" column="sn_imprimir_id_empresa" />
+		<property name="snImpResumenCobranza" column="sn_imp_resumen_cobranza"/>
+		<property name="snCatalogo" column="sn_catalogo" />
+		<property name="dropboxToken" column="dropboxToken"/>
+		<property name="dropboxAppName" column="dropboxAppName"/>
+	</class>
+</hibernate-mapping>

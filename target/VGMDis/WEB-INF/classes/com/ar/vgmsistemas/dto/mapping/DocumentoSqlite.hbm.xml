@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 07/12/2010 11:42:37 by Hibernate Tools 3.3.0.GA -->
+<hibernate-mapping package="com.ar.vgmsistemas.dto">
+    <class name="Documento" table="documentos">
+        <composite-id class="PkDocumento" name="id">
+        	<key-property name="idDocumento" column="id_doc"></key-property>
+        	<key-property name="idLetra" column="id_letra"></key-property>
+        	<key-property name="puntoVenta" column="id_ptovta"></key-property>
+        </composite-id>
+        <property name="descripcion" type="string" column="de_documento" />
+        <property name="tipoBlancoNegro" type="string" column="ti_bn" />
+        <property name="ultimoNumeroDocumento" type="long" column="id_numero" />
+        <property name="isMovilVisible" column="sn_movil" type="string"></property>
+        <property name="tipoAplicaStock" column="ti_aplica_stock" type="integer"></property>
+        <property name="tipoDocumento" column="ti_documento" type="string"/>
+        <property name="categoriaPlanCuenta" column="id_categoria2" type="integer"></property>
+        <property name="funcionTipoDocumento" column="id_funcion" type="integer"/>
+        <property name="snEstadistica" column="sn_estadistica" type="string"/>
+        <property name="numeroLineas" column="nu_lineas" type="integer"></property>
+        <property name="isGenerar" column="sn_generar" type="string"></property>
+        <property name="snFacturaElectronica" column="sn_factura_electronica" type="string"></property>
+        <property name="tiAplicaFacturaElectronica" column="ti_aplica_factura_electronica" type="integer"></property>
+        <property name="tiAplicaIva" column="ti_aplica_iva" type="integer"></property>        
+        <property name="snImprimirImpMovil" column="sn_imprimir_imp_movil" type="string"></property>        
+       	<property name="idDocAnulaFcNc" column="id_docanula_fcnc" type="string"></property>
+       	<property name="idDocAnulaTipoAB" column="id_docanula_tipoab" type="string"></property>
+       	<property name="idDocAnulaPtoVta" column="id_docanula_ptovta" type="integer"></property>
+       	<property name="snPedidoRentable" column="sn_pedido_rentable" type="string"/>
+        <property name="idDocGeneraFcNc" column="id_generar_fcnc" type="string"></property>
+       	<property name="idDocGeneraTipoAB" column="id_generar_tipoab" type="string"></property>
+       	<property name="idDocGeneraPtoVta" column="id_generar_ptovta" type="integer"></property>
+    </class>
+</hibernate-mapping>

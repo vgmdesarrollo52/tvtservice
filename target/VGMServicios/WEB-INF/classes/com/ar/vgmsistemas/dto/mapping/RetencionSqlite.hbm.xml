@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.ar.vgmsistemas.dto">
+	<class name="Retencion" table="retenciones">
+		<composite-id class="PkVenta" mapped="false" name="id" unsaved-value="undefined">
+			<key-property column="id_fcnc" name="idDocumento" type="string" />
+			<key-property column="id_tipoab" name="idLetra" type="string" />
+			<key-property column="id_ptovta" name="puntoVenta" type="long" />
+			<key-property column="id_numdoc" name="idNumeroDocumento" type="long" />
+		</composite-id>
+		<!-- property name="fecha" column="fe_retencion" type="date" / Para agregarla se debe mandar como string-->
+		<property name="importe" column="pr_monto" type="float"/>
+		<property name="observacion" column="de_observacion" type="string"></property>
+		<many-to-one name="planCuenta" column="id_plancta_retencion" class="PlanCuenta"></many-to-one>
+		<many-to-one name="entregaCobranza" column="id_entrega" class="EntregaCobranza"></many-to-one>
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 07/12/2010 11:42:37 by Hibernate Tools 3.3.0.GA -->
+<hibernate-mapping package="com.ar.vgmsistemas.dto">
+    <class name="NoPedido" table="no_pedidos">
+        <id name="id" type="long" access="field">
+            <column name="id_no_pedido" />
+            <generator class="identity" />
+        </id>
+        <property name="fechaNoPedido" type="timestamp" column="fe_no_pedido" />
+        <property name="fechaSincronizacion" type="timestamp" column="fe_sincronizacion" />
+        <property name="observacion" type="string" column="de_observacion" />
+        <property name="idMovil" type="string" column="id_movil_no_pedidos"/>
+        <property name="fechaRegistroMovil" type="timestamp" column="fe_registro_movil"/>
+        
+        <many-to-one name="motivoNoPedido" class="MotivoNoPedido" column="id_motivo"></many-to-one>
+        <many-to-one name="cliente" class="Cliente">
+        	<column name="id_sucursal"></column>
+        	<column name="id_cliente"></column>
+        	<column name="id_comercio"></column>
+        </many-to-one>
+        <many-to-one name="vendedor" class="Vendedor" column="id_vendedor"></many-to-one>
+    </class>
+    
+<!--     <sql-query name="existsNoPedido">
+        SELECT 1
+        FROM NO_PEDIDOS
+        WHERE id_movil =: idMovil
+    </sql-query> 
+    <sql-query name="existsNoPedido">
+	    SELECT 1
+		FROM NO_PEDIDOS
+		WHERE id_movil_no_pedidos = :idMovil
+	</sql-query> -->
+    
+</hibernate-mapping>

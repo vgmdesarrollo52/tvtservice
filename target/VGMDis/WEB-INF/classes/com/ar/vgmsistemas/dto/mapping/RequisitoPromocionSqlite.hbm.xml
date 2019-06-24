@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+	<!-- Generated 07/12/2010 11:42:37 by Hibernate Tools 3.3.0.GA -->
+<hibernate-mapping package="com.ar.vgmsistemas.dto">
+    <class name="RequisitoPromocion" table="promo_requisitos">
+        <id name="id" type="long" access="field">
+            <column name="id_promo" />
+            <generator class="assigned" />
+        </id>
+       <property name="cantBultos" type="int" column="ca_bultos"/>
+       <property name="cantUnidades" type="long" column="ca_unidades"/>
+       <property name="cantArticulos" type="long" column="ca_articulos"/>
+       <property name="idArticulos" type="long" column="id_articulos"/>
+       <property name="idArticulos1" type="long" column="id_articulos1"/>
+       <property name="idArticulos2" type="long" column="id_articulos2"/>       
+       <property name="cantArticulosIngreso" type="long" column="ca_articulos_ingreso"/>   
+    </class>
+</hibernate-mapping>

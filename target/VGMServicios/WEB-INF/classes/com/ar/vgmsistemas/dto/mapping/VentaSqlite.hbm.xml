@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+	<!-- Generated 07/12/2010 11:42:37 by Hibernate Tools 3.3.0.GA -->
+<hibernate-mapping package="com.ar.vgmsistemas.dto">
+	<class name="Venta" table="ventas">
+		<composite-id class="PkVenta" mapped="false" name="id"
+			unsaved-value="undefined">
+			<key-property column="id_fcnc" name="idDocumento" type="string" />
+			<key-property column="id_tipoab" name="idLetra" type="string" />
+			<key-property column="id_ptovta" name="puntoVenta" type="long" />
+			<key-property column="id_numdoc" name="idNumeroDocumento" type="long" />
+		</composite-id>
+		<many-to-one class="CondicionVenta" column="id_condvta" name="condicionVenta" />
+		<many-to-one class="Cliente" name="cliente">
+			<column name="id_sucursal" />
+			<column name="id_cliente" />
+			<column name="id_comercio" />
+		</many-to-one>
+		<property column="pr_subtotal" name="subtotal" type="float" />
+		<property column="pr_subart" generated="never" lazy="false" name="totalPorArticulo" type="float"/>
+		<property column="pr_dgr" name="totalRenta" type="float" />
+		<property column="pr_ivai" name="totalIva21" type="float" />
+		<property column="ti_turno" name="tiTurno" type="string"></property>
+		<property column="pr_iva2" name="totalIva105" type="float" />
+		<property column="pr_tot_imp_interno" name="totalImpuestoInterno" type="float"/>
+		<property column="pr_total" name="total" type="float" />
+		<property column="ta_dto" name="tasaDescuento" type="float" />
+		<property column="ta_dto_cvta" generated="never" lazy="false" name="tasaDescuentoCondicionVenta" type="float"/>
+		<property column="ta_dgr" name="tasaRenta" type="float" />
+		<property name="fechaRegistroSqlite" column="fe_registro" type="string" />
+		<property column="pr_exento" name="totalExento" type="float" />
+		<many-to-one class="Vendedor" column="id_vendedor" name="vendedor" />
+		<property column="pr_bonificacion" name="precioBonificacion" type="float" />
+		<property column="pr_bonif_cvta" name="precioBonificacionCondicionVenta" type="float" />
+		<property column="pr_dirsc" name="totalDirsc" type="float" />
+		<property column="ta_dirsc" name="tasaDirsc" type="float" />
+		<property column="sn_anulo" name="snAnulo" type="string" />
+		<property name="fechaSincronizacionSqlite" column="fe_sincronizacion" type="string" />
+		<property name="idMovil" column="id_movil_venta" type="string"></property>
+		<property column="fe_venta" name="fechaVentaSqlite" type="string" />
+		<many-to-one name="repartidor" class="Repartidor" column="id_repartidor"></many-to-one>
+		<property name="pie" column="de_pie" type="string"></property>
+		<property column="pr_ivani" name="totalIvaNoCategorizado" type="float" />
+		<property column="id_hoja_integrado" name="idHojaIntegrado" type="int"/>
+		<property column="de_cliente" generated="never" lazy="false" name="razonSocial" type="string"/>
+		<property name="idNumdocFiscal" column="id_numdoc_fiscal" type="long"></property> 
+		<property name="isMaxAccomSuperado" column="sn_max_accom_superado" type="string"></property>
+		<!--  property name="tiNC" column="ti_nc" type="string"></property-->
+	</class>
+	
+</hibernate-mapping>

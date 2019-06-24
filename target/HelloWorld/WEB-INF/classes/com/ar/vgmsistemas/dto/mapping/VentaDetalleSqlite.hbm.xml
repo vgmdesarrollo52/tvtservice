@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+	<!-- Generated 07/12/2010 11:42:37 by Hibernate Tools 3.3.0.GA -->
+<hibernate-mapping package="com.ar.vgmsistemas.dto">
+	<class name="VentaDetalle" table="ventas_detalle" where="sn_anulos='N'">
+		<composite-id class="PkVentaDetalle" name="id" unsaved-value="undefined">
+			<key-property name="idDocumento" column="id_fcnc" type="string"/>
+			<key-property name="idLetra" column="id_tipoab" type="string"/>
+			<key-property name="puntoVenta" column="id_ptovta" type="long"/>
+			<key-property name="idNumeroDocumento" column="id_numdoc" type="long"/>
+			<key-property name="secuencia" column="id_secuencia" type="long"/>
+		</composite-id>
+		<many-to-one name="articulo" class="Articulo" column="id_articulos"></many-to-one>
+		<property name="cantidad" type="float" column="ca_articulos" />			
+		<property name="caArticulosKilos" column="ca_kilos_vd" type="float"/>	
+		<property name="prKiloUnitario" column="pr_kilo_unitario" type="float"/>
+		<property name="precioUnitarioSinIva" type="float" column="pr_unitario_siva" />
+		<property name="precioIvaUnitario" type="float" column="pr_iva" />
+		<property name="precioImpuestoInterno" column="pr_imp_interno" type="float"></property>
+		<property name="precioUnitarioSinDescuento" type="float" column="pr_unitario_sdto" />
+		<property name="tasaDescuento" type="float" column="ta_dto" />
+		<property name="unidades" type="float" column="ca_unidades" />
+		<property name="bultos" type="integer" column="ca_bulto" />
+		<many-to-one name="listaPrecio" class="ListaPrecio" column="id_lista"></many-to-one>
+		<property name="snAnulo" column="sn_anulo" type="string"></property>
+		<property name="fechaSincronizacion" column="fe_sincronizacion" type="timestamp"></property>
+		<property name="idMovil" column="id_movil_venta" type="string"></property>
+		<property name="idDescuentoProveedor" column="id_dto_proveedor" type="long"></property>
+		<property name="tasaDescuentoProveedor" column="ta_dto_proveedor" type="float"></property>
+		<property name="precioUnitarioSinDescuentoProveedor" column="pr_unitario_sdto_prov" type="float"></property>
+		<property name="tasaDescuentoCliente" column="ta_dto_cliente" type="float"></property>
+		<property name="precioUnitarioSinDescuentoCliente" column="pr_unitario_sdto_cliente"></property>
+		<property name="numeroTropa" column="nu_tropa"></property>
+		<property name="tasaImpuestoInterno" column="ta_imp_interno_vd"></property>	
+		<property name="idPromocion" column="id_promo" type="long"></property>
+		<property name="tipoLista" column="ti_lista" type="long"></property>
+		<property name="isMaxAccomSuperado" column="sn_max_accom_superado" type="string"></property>
+		<property name="idAccionEmp" type="integer" column="id_accion_emp" />
+		<property name="idFcSecuencia" type="integer" column="id_FcSecuencia" />
+	</class>
+</hibernate-mapping>

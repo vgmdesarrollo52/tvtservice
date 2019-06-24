@@ -1,0 +1,82 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 13-jun-2019 12:28:18 by Hibernate Tools 4.3.1.Final -->
+<hibernate-mapping>
+    <class name="com.ar.vgmsistemas.dto.Caja" table="caja" schema="dbo" catalog="JotaBePdas" optimistic-lock="version">
+        <composite-id name="id" class="com.ar.vgmsistemas.dto.PkCaja">
+            <key-property name="idSucursal" type="int">
+                <column name="id_sucursal" />
+            </key-property>
+            <key-property name="feCaja" type="timestamp">
+                <column name="fe_caja" length="23" />
+            </key-property>
+        </composite-id>
+        <property name="prEfectivo" type="big_decimal">
+            <column name="pr_efectivo" precision="10" />
+        </property>
+        <property name="prMonedas" type="big_decimal">
+            <column name="pr_monedas" precision="9" />
+        </property>
+        <property name="prCheques" type="big_decimal">
+            <column name="pr_cheques" precision="10" />
+        </property>
+        <property name="prChequesot" type="big_decimal">
+            <column name="pr_chequesot" precision="10" />
+        </property>
+        <property name="prGastos" type="big_decimal">
+            <column name="pr_gastos" precision="10" />
+        </property>
+        <property name="prGastosef" type="big_decimal">
+            <column name="pr_gastosef" precision="10" />
+        </property>
+        <property name="prGastosot" type="big_decimal">
+            <column name="pr_gastosot" precision="10" />
+        </property>
+        <property name="prVales" type="big_decimal">
+            <column name="pr_vales" precision="10" />
+        </property>
+        <property name="prValesot" type="big_decimal">
+            <column name="pr_valesot" precision="10" />
+        </property>
+        <property name="prValesef" type="big_decimal">
+            <column name="pr_valesef" precision="10" />
+        </property>
+        <property name="prTickets" type="big_decimal">
+            <column name="pr_tickets" precision="10" />
+        </property>
+        <property name="prDolares" type="big_decimal">
+            <column name="pr_dolares" precision="10" />
+        </property>
+        <property name="prFaltante" type="big_decimal">
+            <column name="pr_faltante" precision="10" />
+        </property>
+        <property name="prCecacor" type="big_decimal">
+            <column name="pr_cecacor" precision="10" />
+        </property>
+        <property name="prSobrante" type="big_decimal">
+            <column name="pr_sobrante" precision="10" />
+        </property>
+        <property name="prCuaderno" type="big_decimal">
+            <column name="pr_cuaderno" precision="10" />
+        </property>
+        <property name="prTotalcaja" type="big_decimal">
+            <column name="pr_totalcaja" precision="10" />
+        </property>
+        <property name="usLogin" type="string">
+            <column name="us_login" length="18" />
+        </property>
+        <property name="feCierre" type="timestamp">
+            <column name="fe_cierre" length="23" />
+        </property>
+        <property name="feRegistro" type="timestamp">
+            <column name="fe_registro" length="23" />
+        </property>
+        <property name="snCierre" type="java.lang.Character">
+            <column name="sn_cierre" length="1" />
+        </property>
+        <property name="nuProceso" type="java.lang.Integer">
+            <column name="nu_proceso" />
+        </property>
+    </class>
+</hibernate-mapping>

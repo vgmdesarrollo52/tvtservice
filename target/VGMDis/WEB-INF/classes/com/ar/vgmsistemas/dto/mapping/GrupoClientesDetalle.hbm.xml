@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 29/06/2011 08:51:48 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping package="com.ar.vgmsistemas.dto">
+    <class name="GrupoClientesDetalle" table="grupo_clientes_detalle">
+        <composite-id class="PkGrupoClientesDetalle" name="id" unsaved-value="undefined">
+		  <key-property column="id_grupo_clie" name="idGrupoClie" type="int"/>
+		  <key-property column="id_grupo_clie_detalle" name="idGrupoClieDetalle" type="int"/>
+		</composite-id>    
+		<many-to-one class="Cliente" name="cliente">
+			<column name="id_sucursal"/>
+			<column name="id_cliente"/>
+			<column name="id_comercio"/>
+		</many-to-one>
+    </class>
+</hibernate-mapping>

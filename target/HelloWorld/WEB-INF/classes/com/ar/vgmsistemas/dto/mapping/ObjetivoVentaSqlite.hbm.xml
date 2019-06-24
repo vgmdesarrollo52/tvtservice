@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 07/12/2010 11:42:37 by Hibernate Tools 3.3.0.GA -->
+<hibernate-mapping package="com.ar.vgmsistemas.dto">
+	<class name="ObjetivoVenta" table="objetivos_venta">
+		<composite-id class="PkObjetivoVenta" name="id">
+			<key-property column="id_articulos" name="idArticulos"	type="long" />
+			<key-property column="id_sucursal" name="idSucursal" type="long" />
+			<key-property column="id_cliente" name="idCliente" type="long" />
+			<key-property column="id_comercio" name="idComercio" type="long" />
+			<key-property column="id_objetivo" name="idObjetivo" type="long" />
+		</composite-id>
+		<property column="cantidad" name="cantidad" type="float" />
+		<property column="cantidad_vendida" name="cantidadVendida"	type="float" />
+		<many-to-one class="Cliente" name="cliente" lazy = "false" insert="false" update="false">
+			<column name="id_sucursal" />
+			<column name="id_cliente" />
+			<column name="id_comercio" />
+		</many-to-one>
+		<many-to-one class="Articulo" name="articulo" lazy = "false" insert="false" update="false">
+			<column name="id_articulos" />
+		</many-to-one>
+	</class>
+</hibernate-mapping>

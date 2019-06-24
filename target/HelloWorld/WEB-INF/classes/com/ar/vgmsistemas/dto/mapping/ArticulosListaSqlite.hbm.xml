@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.ar.vgmsistemas.dto">
+	<class name="ArticulosLista" table="articulos_lista">
+		<composite-id name="id" class="PkArticulosLista" access="field">
+			<key-property column="id_sucursal" name="idSucursal" type="long" />
+			<key-property column="id_lista" name="idLista" type="long" />
+			<key-property column="id_articulos" name="idArticulos" type="long" />
+		</composite-id>
+		<property name="prVenta" column="pr_venta" type="float" />
+		<property name="taDto" column="ta_dto" type="float"></property>
+		<property name="caLista" column="ca_lista" type="float"></property>
+		<property name="caVendida" column="ca_vendida" type="float"></property>
+		<property name="snSuctodas" column="sn_suctodas" type="string"></property>
+		<property name="taDto1" column="ta_dto1" type="float"></property>
+		<property name="taDto2" column="ta_dto2" type="float"></property>
+		<property name="feVigenciaDesdeSqlite" column="fe_vigencia_desde" type="string"></property>
+		<property name="feVigenciaHastaSqlite" column="fe_vigencia_hasta" type="string"></property>
+		
+	</class>
+	
+	
+</hibernate-mapping>

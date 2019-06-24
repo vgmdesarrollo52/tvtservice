@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+	<!-- Generated 07/12/2010 11:42:37 by Hibernate Tools 3.3.0.GA -->
+<hibernate-mapping package="com.ar.vgmsistemas.dto">
+	<class name="Articulo" table="articulos" >
+		<id name="id" type="long" access="field">
+			<column name="id_articulos" />
+			<generator class="assigned" />
+		</id>
+		<property name="descripcion" type="string" column="de_articulos" />
+		<property name="unidadPorBulto" type="int" column="ca_unidxbulto" />
+		<property name="stock" type="float" column="ca_stock" access="field"/>
+		<property name="tasaIva" type="float" column="ta_iva" />
+		<property name="impuestoInterno" type="float" column="pr_imp_interno" />
+		<property name="tasaImpuestoInterno" type="float" column="ta_imp_interno" />
+		<property name="codigoEmpresa" type="string" column="id_empresa" />
+		<many-to-one name="subrubro" class="Subrubro">
+			<column name="id_subrubro" not-null="true"></column>
+			<column name="id_segmento" not-null="true"></column>
+			<column name="id_negocio" not-null="true"></column>
+		</many-to-one>
+		<many-to-one name="marca" class="Marca" column="id_linea"></many-to-one>
+		<property name="kilos" type="float" column="ca_kilos"/>
+		<property name="snPromocion" column="sn_promocion" type="string"></property>
+		<property name="snCritico" column="sn_critico" type="string"></property>
+		<property name="snPesable" column="sn_pesable" type="string"></property>
+		<property name="snUnidad" column="sn_unidad" type="string"></property>
+		<property name="precioBase" column="pr_arcor_a" type="float"></property>
+		<property name="precioCostoNeto" column="pr_costo" type="float"></property>
+		<!--property name="taCosto" column="ta_costo" type="float"></property-->
+		<property name="idProveedor" type="long" column="id_proveedor" />
+	</class>
+	
+</hibernate-mapping>

@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 29/06/2011 08:51:48 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping package="com.ar.vgmsistemas.dto">
+    <class name="StockSucursal" table="stock_sucursal">
+        <composite-id class="PkStockSucursal" mapped="false" name="id" unsaved-value="undefined">
+		  <key-property column="ca_stkdeposito" name="caStkdeposito" type="float"/>
+		  <key-property column="id_sucursal" name="idDeposito" type="int"/>
+		  <key-property column="id_articulos" name="idArticulos" type="long"/>
+		</composite-id>
+		
+        <!-- NOTA: COMO NO TIENE CLAVE PRIMARIA HAY QUE PONER TODOS LOS CAMPOS -->
+        
+		<!--  property name="caStkdeposito" type="float" column="ca_stkdeposito" />
+		<property name="idDeposito" type="long" column="id_sucursal" />
+		<property name="idArticulos" type="long" column="id_articulos" /-->
+    </class>
+</hibernate-mapping>

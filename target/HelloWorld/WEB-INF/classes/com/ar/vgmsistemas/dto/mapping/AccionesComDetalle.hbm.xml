@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 29/06/2011 08:51:48 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping package="com.ar.vgmsistemas.dto">
+    <class name="AccionesComDetalle" table="acciones_com_detalle">
+        <composite-id class="PkAccionesComDetalle" name="id" unsaved-value="undefined">
+		  <key-property column="id_acciones_com" name="idAccionesCom" type="int"/>
+		  <key-property column="id_acciones_com_detalle" name="idAccionesComDetalle" type="int"/>
+		</composite-id>
+        
+		<property column="id_subrubro" name="idSubrubro" type="long"></property>
+		<property column="id_segmento" name="idRubro" type="long"></property>
+		<property column="id_negocio" name="idNegocio" type="long"></property>
+		
+		<many-to-one class="Articulo" name="articulo" column="id_articulos"/>
+		<many-to-one class="Marca" name="marca" column="id_linea"/>
+		<property name="idProveedor" type="long" column="id_proveedor" />
+        <property column="ta_dto" generated="never" name="taDto" type="float"/>   
+        <property column="ta_dto_bcerrado" generated="never" name="taDtoBcerrado" type="float"/>   
+        <property column="ca_vendida" generated="never" name="caVendida" type="float"/>   
+        <property column="rg_limite_inf" generated="never" name="rgLimiteInf" type="float"/>
+        <property column="rg_limite_sup" generated="never" name="rgLimiteSup" type="float"/>
+    </class>
+</hibernate-mapping>

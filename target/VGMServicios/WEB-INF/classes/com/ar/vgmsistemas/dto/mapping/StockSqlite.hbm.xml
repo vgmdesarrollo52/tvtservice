@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 29/06/2011 08:51:48 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping package="com.ar.vgmsistemas.dto">
+    <class name="Stock" table="stock">      
+        <id name="idArticulos" type="long" access="field">
+            <column name="id_articulos" />
+            <generator class="assigned" />
+        </id>  
+		<property name="stock" type="float" column="stock" />
+    </class>
+</hibernate-mapping>

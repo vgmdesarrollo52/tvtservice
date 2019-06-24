@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 07/12/2010 11:42:37 by Hibernate Tools 3.3.0.GA -->
+<hibernate-mapping package="com.ar.vgmsistemas.dto">
+    <class name="ComprasImpuestos" table="compras_impuestos" >
+        <composite-id class="PkComprasImpuestos" name="id">
+        	<key-property name="idProveedor" column="id_proveedor"></key-property>
+        	<key-property name="idFcncnd" column="id_fcncnd"></key-property>
+        	<key-property name="idPuntoVenta" column="id_ptovta"></key-property>
+        	<key-property name="idNumero" column="id_numero"></key-property>
+        	<key-property name="idImpuesto" column="id_impuesto"></key-property>
+			<key-property name="idTipoab" column="id_tipoab"></key-property>
+			<key-property name="idSecuencia" column="id_secuencia"></key-property>        	
+        </composite-id>
+        <property name="prImpGravado" type="float" column="pr_imp_gravado" />
+        <property name="taImpuesto" type="float" column="ta_impuesto" />
+        <property name="prImpuesto" type="float" column="pr_impuesto" />
+    </class>
+</hibernate-mapping>

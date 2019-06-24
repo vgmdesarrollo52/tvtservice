@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 13-jun-2019 12:28:18 by Hibernate Tools 4.3.1.Final -->
+<hibernate-mapping package="com.ar.vgmsistemas.dto">
+    <class name="TipoCliente" table="tipocliente">
+        <id name="idTipocliente" type="string">
+            <column name="id_tipocliente" length="2" />
+            <generator class="assigned" />
+        </id>
+        <property name="deTipocliente" type="string">
+            <column name="de_tipocliente" length="35" />
+        </property>
+        <property name="nuEnviocc" type="integer">
+            <column name="nu_enviocc" />
+        </property>
+    </class>
+</hibernate-mapping>

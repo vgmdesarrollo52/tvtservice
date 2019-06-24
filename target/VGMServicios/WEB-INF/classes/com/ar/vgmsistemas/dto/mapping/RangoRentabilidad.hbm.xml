@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+	<!-- Generated 07/12/2010 11:42:37 by Hibernate Tools 3.3.0.GA -->
+<hibernate-mapping package="com.ar.vgmsistemas.dto">
+	<class name="RangoRentabilidad" table="rangos_rentabilidad">
+		<id name="id" type="integer" access="field">
+			<column name="id_rango" />
+			<generator class="assigned" />
+		</id>
+		<property name="idProveedor" type="long" column="id_proveedor"></property>
+		<property name="idSucursal" type="long" column="id_sucursal"></property>
+		<property name="taDesde" type="float" column="ta_desde"></property>
+		<property name="taHasta" type="float" column="ta_hasta"></property>
+		<property name="snRentable" type="string" column="sn_rentable"></property>
+        <property name="descripcion" type="string" column="de_descripcion"/>
+        <property name="idGrupoClie" type="int" column="id_grupo_clie"/>
+	</class>	
+</hibernate-mapping>

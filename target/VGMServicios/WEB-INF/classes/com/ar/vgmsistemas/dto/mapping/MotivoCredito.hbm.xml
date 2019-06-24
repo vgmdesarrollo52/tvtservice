@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 17/11/2015 15:31:38 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping package="com.ar.vgmsistemas.dto">
+    <class name="MotivoCredito" table="motivos_rechazo_nc">
+        <id name="idMotivoRechazoNC" type="integer" access="field">
+            <column name="id_motivo_rechazo_nc" />
+            <generator class="assigned" />
+        </id>
+        <property name="deMotivoRechazoNC" type="string">
+            <column name="de_motivo_rechazo_nc" />
+        </property>
+    </class>
+</hibernate-mapping>

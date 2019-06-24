@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 07/12/2010 11:42:37 by Hibernate Tools 3.3.0.GA -->
+<hibernate-mapping package="com.ar.vgmsistemas.dto">
+    
+    <class name="DescuentoProveedorGeneral" table="dto_proveedor">        
+        <id name="id" type="integer" access="field">
+			<column name="id_dto_proveedor" />
+			<generator class="assigned" />
+		</id>
+              
+        <property name="idProveedor" type="integer" column="id_proveedor" />
+        <many-to-one class="Negocio" name="negocio" column="id_negocio" insert="false" update="false"/>
+        <many-to-one class="Rubro" name="rubro" insert="false" update="false" fetch="join" outer-join="true">
+			<column name="id_negocio"></column>
+			<column name="id_segmento"></column>
+		</many-to-one>
+		<many-to-one class="Subrubro" name="subrubro" fetch="join" outer-join="true">
+			<column name="id_subrubro"></column>
+			<column name="id_segmento"></column>
+			<column name="id_negocio"></column>
+		</many-to-one>
+        <many-to-one class="Articulo" name="articulo" column="id_articulos"/>
+        <many-to-one class="Marca" name="marca" column="id_linea"/>
+        <property name="tasaDescuentoProveedor" type="float" column="ta_dto_proveedor" />
+        <!-- <property name="fechaInicioVigencia" column="fe_inicio_vigencia" type="date"/>
+        <property name="fechaFinVigencia" column="fe_fin_vigencia" type="date"/> -->
+         <property name="prioridad" type="long" column="nu_prioridad" />
+        
+    </class>
+</hibernate-mapping>

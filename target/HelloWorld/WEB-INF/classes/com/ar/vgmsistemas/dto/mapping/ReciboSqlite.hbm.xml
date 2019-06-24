@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.ar.vgmsistemas.dto">
+	<class name="Recibo" table="talon_recibo" where="id_estado IS NULL">
+		<composite-id class="PkRecibo" mapped="false" name="id" unsaved-value="undefined">
+			<key-property name="idRecibo" column="id_recibo"></key-property>
+			<key-property name="idPuntoVenta" column="id_recpvta"/>
+		</composite-id>
+		<property name="idCliente" column="id_cliente" type="long" access="field"></property>
+		<property name="idSucursal" column="id_sucursal" type="long" access="field"></property>
+		<many-to-one name="entregaCobranza" class="EntregaCobranza" column="id_entrega"></many-to-one>
+		<many-to-one name="recursoHumano" class="RecursoHumano" column="id_vendedor"></many-to-one>
+		<property name="fechaSqlite" column="fe_recibo" type="string" />
+		<property name="idMovil" column="id_movil" type="string" unique="true"></property>
+		<property name="estado" column="id_estado" type="string"/>	
+		<property name="fechaRegistroMovilSqlite" column="fe_registro_movil" type="string"></property>
+		<property name="total" column="pr_total" type="float"/>
+		<property name="deviceId" column="device_id" type="string"/>
+	</class>
+</hibernate-mapping>

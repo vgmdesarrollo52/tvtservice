@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 07/12/2010 11:42:37 by Hibernate Tools 3.3.0.GA -->
+<hibernate-mapping package="com.ar.vgmsistemas.dto">
+    <class name="ListaPrecioDetalle" table="listasPreciosDetalle">
+	    <composite-id class="PkListaPrecioDetalle" name="id" mapped="false" >
+	    	<key-property name="idArticulo" column="id_articulos" access="field"></key-property>
+	    	<key-property name="idLista" column="id_lista" access="field"></key-property>
+	    	<key-property name="caArticuloDesde" column="ca_articulo_desde" access="field"></key-property>
+        	<key-property name="caArticuloHasta" column="ca_articulo_hasta" access="field"></key-property>
+	    	<generator class="assigned"></generator>
+	    </composite-id>
+        <property name="precioSinIva" type="float" column="pr_siva" />
+        <property name="precioConIva" type="float" column="pr_final" />
+        <property name="cantidadPorLista" type="float" column="ca_lista" />
+        <property name="cantidadVendida" type="float" column="ca_vendido" />
+        <property name="snMovil" type="string" column="sn_palm"/>
+        <property name="fechaVigenciaDesdeSqlite" type="string" column="fe_vigencia_desde"/>
+        <property name="fechaVigenciaHastaSqlite" type="string" column="fe_vigencia_hasta"/>
+    </class>
+</hibernate-mapping>

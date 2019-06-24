@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+	<!-- Generated 07/12/2010 11:42:37 by Hibernate Tools 3.3.0.GA -->
+<hibernate-mapping package="com.ar.vgmsistemas.dto">
+	<class name="Subrubro" table="subrubro">
+		<composite-id class="PkSubrubro" name="id" unsaved-value="undefined">
+			<key-property name="idSubrubro" column="id_subrubro"/>
+			<key-property name="idRubro" column="id_segmento"/>
+			<key-property name="idNegocio" column="id_negocio"/>
+		</composite-id>
+		<property column="de_subrubro" name="descripcion" type="string" />
+		<many-to-one class="Rubro" name="rubro" insert="false" update="false" fetch="join" outer-join="true">
+			<column name="id_negocio"></column>
+			<column name="id_segmento"></column>
+		</many-to-one>
+	</class>
+	
+	<!-- <sql-query name="recoveryByVendedor">
+		SELECT id_segmento, id_negocio, id_subrubro
+		FROM vendedorxsubrubro
+		WHERE id_vendedor = :idVendedor
+	</sql-query>  -->
+</hibernate-mapping>

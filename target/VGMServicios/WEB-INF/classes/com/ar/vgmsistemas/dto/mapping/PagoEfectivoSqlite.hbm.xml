@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 06/07/2011 09:49:12 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping package="com.ar.vgmsistemas.dto">
+    <class name="PagoEfectivo" table="pagosEfectivo">
+        <id name="id" type="long">
+            <column name="id_pago_efectivo" />
+            <generator class="assigned" />
+        </id>
+        <property name="cotizacion" column="ta_cotizacion" type="float"></property>
+        <property name="importe" column="pr_moneda_extranjera" type="float"></property>
+        <property name="importeMonedaCorriente" column="pr_importe" type="float" access="field"></property>
+        <many-to-one name="tipoMoneda" column="id_valor" class="TipoMoneda"></many-to-one>
+        <many-to-one name="entregaCobranza" column="id_entrega" class="EntregaCobranza"></many-to-one>
+    </class>
+</hibernate-mapping>

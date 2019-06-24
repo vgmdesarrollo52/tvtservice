@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 07/12/2010 11:42:37 by Hibernate Tools 3.3.0.GA -->
+<hibernate-mapping package="com.ar.vgmsistemas.dto">
+    <class name="EntregaCobranza" table="entrega">
+        <id name="id" type="long">
+            <column name="id_entrega" />
+            <generator class="assigned" />
+        </id>
+        <property name="totalEfectivo" column="pr_efectivo" type="float" access="field"></property>
+        <property name="totalCheque" column="pr_cheques" type="float" access="field"></property>
+        <property name="totalRetencion" column="pr_retencion" type="float" access="field"></property>
+        <property name="totalDeposito" column="pr_deposito" type="float" access="field"></property>                
+    </class>
+</hibernate-mapping>

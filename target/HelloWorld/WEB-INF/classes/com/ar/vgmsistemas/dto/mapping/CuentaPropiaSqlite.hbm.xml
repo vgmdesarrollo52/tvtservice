@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 13-jun-2019 12:28:18 by Hibernate Tools 4.3.1.Final -->
+<hibernate-mapping>
+    <class name="com.ar.vgmsistemas.dto.CuentaPropia" table="cuenta_propia" schema="dbo" catalog="JotaBePdas" optimistic-lock="version">
+        <id name="idNrocuenta" type="int">
+            <column name="id_nrocuenta" />
+            <generator class="assigned" />
+        </id>
+        <property name="idValor" type="java.lang.Integer">
+            <column name="id_valor" />
+        </property>
+        <property name="idBono" type="java.lang.Integer">
+            <column name="id_bono" />
+        </property>
+        <property name="idBancogirado" type="java.lang.Integer">
+            <column name="id_bancogirado" />
+        </property>
+        <property name="idCuentapropia" type="string">
+            <column name="id_cuentapropia" length="40" />
+        </property>
+        <property name="idPostal" type="java.lang.Integer">
+            <column name="id_postal" />
+        </property>
+        <property name="idTipo" type="string">
+            <column name="id_tipo" length="2" />
+        </property>
+        <property name="feApertura" type="timestamp">
+            <column name="fe_apertura" length="23" />
+        </property>
+        <property name="feCierre" type="timestamp">
+            <column name="fe_cierre" length="23" />
+        </property>
+        <property name="prCostomantenimiento" type="big_decimal">
+            <column name="pr_costomantenimiento" precision="16" scale="4" />
+        </property>
+        <property name="deMotivodecierre" type="string">
+            <column name="de_motivodecierre" length="40" />
+        </property>
+        <property name="idSucursalbanco" type="java.lang.Integer">
+            <column name="id_sucursalbanco" />
+        </property>
+        <property name="nuAcreditacion" type="java.lang.Integer">
+            <column name="nu_acreditacion" />
+        </property>
+        <property name="nuVentavalores" type="java.lang.Integer">
+            <column name="nu_ventavalores" />
+        </property>
+        <property name="deTitular" type="string">
+            <column name="de_titular" length="100" />
+        </property>
+    </class>
+</hibernate-mapping>

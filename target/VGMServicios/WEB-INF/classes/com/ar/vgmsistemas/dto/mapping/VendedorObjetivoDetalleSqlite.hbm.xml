@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+	<!-- Generated 07/12/2010 11:42:37 by Hibernate Tools 3.3.0.GA -->
+<hibernate-mapping package="com.ar.vgmsistemas.dto">
+	<class name="VendedorObjetivoDetalle" table="vend_objetivos_detalle">
+		<composite-id class="PkVendedorObjetivoDetalles" mapped="false" name="id" unsaved-value="undefined">
+		  <key-property column="id_objetivo" name="idObjetivo" type="int"/>
+		  <key-property column="id_secuencia" name="idSecuencia" type="int"/>
+		</composite-id>
+		<!-- many-to-one class="Rubro" name="rubro" insert="false" update="false">
+			<column name="id_negocio"></column>
+			<column name="id_segmento"></column>
+		</many-to-one>
+		<property name="rubro.id._idRubro" type="long" column="id_segmento" />
+		<many-to-one name="subrubro" class="Subrubro" insert="false" update="false">
+			<column name="id_subrubro"></column>
+			<column name="id_segmento"></column>
+			<column name="id_negocio"></column>
+		</many-to-one>
+		<property name="subrubro.id.idSubrubro" type="long" column="id_segmento" /-->
+		<property name="idSubrubro" type="long" column="id_subrubro" />
+		<property name="idRubro" type="long" column="id_segmento" />
+		<many-to-one name="marca" class="Marca" column="id_linea"></many-to-one>
+		<property name="idProveedor" type="long" column="id_proveedor"/>
+		<property name="caArticulos" type="int" column="ca_articulos" />
+		<many-to-one name="articulo" class="Articulo" column="id_articulos"></many-to-one>
+		<property name="caKilos" type="float" column="ca_kilos" />
+		<property name="taCobertura" type="float" column="ta_cobertura" />
+		
+		<property name="numeroClientesRestantes" type="int" column="ca_restantes" />
+		<property name="porcentajeCubierto" type="float" column="ca_lograda" />
+		<property name="idNegocio" type="long" column="id_negocio" />
+	</class>
+</hibernate-mapping>

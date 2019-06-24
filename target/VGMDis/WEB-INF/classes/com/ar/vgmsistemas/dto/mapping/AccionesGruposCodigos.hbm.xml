@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 29/06/2011 08:51:48 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping package="com.ar.vgmsistemas.dto">
+    <class name="AccionesGruposCodigos" table="acciones_grupos_codigos">
+        <id name="idAccionesGruposCodigo" column="id_acciones_grupos_codigo" type="int">
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="accionesCom" class="AccionesCom" cascade="save-update">
+			<column name="id_acciones_com"></column>
+		</many-to-one>
+		<many-to-one name="grupoClientesDetalle" class="GrupoClientesDetalle" lazy="false" cascade="save-update">
+			<column name="id_grupo_clie"></column>
+			<column name="id_grupo_clie_detalle"></column>
+		</many-to-one>
+    </class>
+</hibernate-mapping>

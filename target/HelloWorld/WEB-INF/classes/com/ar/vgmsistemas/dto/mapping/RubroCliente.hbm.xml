@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 19-jun-2019 12:01:36 by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="com.ar.vgmsistemas.dto.RubroCliente" table="rubros">
+        <id name="id" type="int">
+            <column name="id_rubro" />
+            <generator class="assigned" />
+        </id>
+        <property name="descripcion" type="string">
+            <column name="de_rubro" />
+        </property>
+        <property name="nuEnviocc" type="integer">
+            <column name="nu_enviocc" />
+        </property>
+        <property name="deCategoria" type="string">
+            <column name="de_categoria" />
+        </property>
+        <property name="deCanal" type="string">
+            <column name="de_canal" />
+        </property>
+    </class>
+</hibernate-mapping>
